@@ -1,57 +1,34 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
-
-/// This is the main application widget.
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  static const String _title = 'Primeira amostra do app';
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: _title,
+void main() => runApp(MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text(_title)),
-        body: const MyStatefulWidget(),
-      ),
-    );
-  }
-}
-
-/// This is the stateful widget that the main application instantiates.
-class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({Key? key}) : super(key: key);
-
-  @override
-  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
-}
-
-/// This is the private State class that goes with MyStatefulWidget.
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  bool selected = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        setState(() {
-          selected = !selected;
-        });
-      },
-      child: Center(
-        child: AnimatedContainer(
-          width: selected ? 200.0 : 100.0,
-          height: selected ? 100.0 : 200.0,
-          color: selected ? Colors.red : Colors.blue,
-          alignment:
-              selected ? Alignment.center : AlignmentDirectional.topCenter,
-          duration: const Duration(seconds: 2),
-          curve: Curves.fastOutSlowIn,
-          child: const FlutterLogo(size: 75),
+        body: ListaTransferencia(),
+        appBar: AppBar(
+          title: Text('Transferências'),
         ),
       ),
+    ));
+
+class ListaTransferencia extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Card(
+          child: ListTile(
+            leading: Icon(Icons.monetization_on),
+            title: Text('100.0'),
+            subtitle: Text('100.0'),
+          ),
+        ),
+        Card(
+          child: ListTile(
+            leading: Icon(Icons.monetization_on),
+            title: Text('200.0'),
+            subtitle: Text('200.0'),
+          ),
+        ),
+      ],
     );
   }
 }
