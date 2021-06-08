@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:login/pages/login.page.dart';
+import 'package:flutter/material.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -12,9 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Marcos',
-      theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
-      ),
+      theme: ThemeData(primarySwatch: Colors.deepPurple,),
       home: LoginPage(),
     );
   }

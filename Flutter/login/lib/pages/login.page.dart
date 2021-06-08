@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -20,10 +21,34 @@ class _LoginPageState extends State<LoginPage> {
               TextFormField(
                 autofocus: true,
                 keyboardType: TextInputType.number,
-                style: new TextStyle(color: Colors.white, fontSize: 2),
+                style: new TextStyle(color: Colors.white, fontSize: 20),
                 decoration: InputDecoration(
                   labelText: "CPF",
                   labelStyle: TextStyle(color: Colors.white),
+                ),
+              ),
+              Divider(),
+              TextFormField(
+                autofocus: true,
+                obscureText: true,
+                keyboardType: TextInputType.text,
+                style: new TextStyle(color: Colors.white, fontSize: 20),
+                decoration: InputDecoration(
+                  labelText: "Senha",
+                  labelStyle: TextStyle(color: Colors.white),
+                ),
+              ),
+              Divider(),
+              ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(
+                    Colors.white,
+                  ),
+                ),
+                onPressed: () => {},
+                child: Text(
+                  "Entrar",
+                  style: TextStyle(color: Colors.deepPurple),
                 ),
               ),
             ],
